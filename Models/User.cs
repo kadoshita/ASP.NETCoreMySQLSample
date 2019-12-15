@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ASP.NETCoreMySQLSample.Models
 {
-    public class SampleData
+    public class User
     {
         public int ID { get; set; }
         public string name { get; set; }

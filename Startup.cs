@@ -28,7 +28,7 @@ namespace ASP.NETCoreMySQLSample
         {
             services.AddRazorPages();
 
-            services.AddDbContext<SampleDataContext>(options => options.UseMySql(Configuration.GetConnectionString("SampleDataContext"));
+            services.AddDbContext<UserContext>(options => options.UseMySql(Configuration.GetConnectionString("UserContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
