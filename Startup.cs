@@ -9,6 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using ASP.NETCoreMySQLSample.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace ASP.NETCoreMySQLSample
 {
     public class Startup
@@ -24,6 +27,8 @@ namespace ASP.NETCoreMySQLSample
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.AddDbContext<SampleDataContext>(options => options.UseMySql(Configuration.GetConnectionString("SampleDataContext"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

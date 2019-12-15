@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace SampleDataContext.Data
+namespace ASP.NETCoreMySQLSample.Data
 {
     public class SampleDataContext : DbContext
     {
