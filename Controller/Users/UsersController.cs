@@ -42,6 +42,18 @@ namespace ASP.NETCoreMySQLSample.Controller.Users
             return user;
         }
 
+        // GET: api/Users?name=user_name
+        [HttpGet]
+        public async Task<ActionResult<User>> GetUserByName([FromQuery(Name = "name")] string name)
+        {
+            var user = await _context.User.SingleAsync(u => u.name == name);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return user;
+        }
         // PUT: api/Users/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
